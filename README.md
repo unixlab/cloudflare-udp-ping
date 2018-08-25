@@ -11,10 +11,10 @@ gcc -o udpclient udpclient.c net.c -pthread -lm -static
 ```
 # run tool in local network
 ```
-# ./udpserver
+host1 ~ # ./udpserver
 [*] Starting udpreceiver on 0.0.0.0:4321, polling=0, busy_poll=0, threads=1, reuseport=0
 
-# ./udpclient 172.16.1.2:4321
+host2 ~ # ./udpclient 172.16.1.2:4321
 [*] Sending to 172.16.1.2:4321, polling=0, src_port=65500
 pps=  4995 avg=196.663us dev=60770.084us min=157.645us
 pps=  4995 avg=197.286us dev=197.058us min=149.032us
@@ -39,10 +39,10 @@ pps=  4996 avg=197.224us dev=60764.001us min=147.738us
 ```
 # run tool in production network
 ```
-# ./udpserver
+host1 ~ # ./udpserver
 [*] Starting udpreceiver on 0.0.0.0:4321, polling=0, busy_poll=0, threads=1, reuseport=0
 
-# ./udpclient 172.16.1.2:4321
+host2 ~ # ./udpclient 172.16.1.2:4321
 [*] Sending to 172.16.1.2:4321, polling=0, src_port=65500
 pps= 57147 avg= 16.851us dev=  2.145us min=14.327us
 pps= 58342 avg= 16.514us dev=  0.638us min=14.766us
