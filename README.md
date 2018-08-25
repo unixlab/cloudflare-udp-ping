@@ -65,30 +65,3 @@ pps= 63184 avg= 15.205us dev=  1.261us min=13.653us
 pps= 63036 avg= 15.243us dev=  1.304us min=13.790us
 pps= 63227 avg= 15.194us dev=  0.839us min=13.665us
 ```
-# run tool in production network with pinning, polling and timestamping
-```
-# taskset -c 3 ./udpserver --polling
-[*] Starting udpreceiver on 0.0.0.0:4321, polling=1, busy_poll=0, threads=1, reuseport=0
-
-# taskset -c 3 ./udpclient 172.16.1.2:4321 --polling --timestamp
-[*] Sending to 172.16.1.2:4321, polling=1, src_port=65500
-pps= 62513 avg= 15.451us dev=  1.036us min=13.195us  (packet=3.287us/0.502)
-pps= 62465 avg= 15.461us dev=  0.971us min=13.302us  (packet=3.296us/0.490)
-pps= 62322 avg= 15.498us dev=  1.049us min=13.118us  (packet=3.303us/0.515)
-pps= 62366 avg= 15.486us dev=  0.996us min=13.336us  (packet=3.298us/0.490)
-pps= 62413 avg= 15.476us dev=  1.065us min=13.236us  (packet=3.297us/0.503)
-pps= 62250 avg= 15.515us dev=  1.037us min=13.311us  (packet=3.292us/0.487)
-pps= 62170 avg= 15.538us dev=  1.018us min=13.158us  (packet=3.304us/0.497)
-pps= 62088 avg= 15.561us dev=  1.077us min=13.224us  (packet=3.310us/0.498)
-pps= 62097 avg= 15.556us dev=  1.040us min=13.212us  (packet=3.302us/0.536)
-pps= 62369 avg= 15.482us dev=  1.001us min=13.245us  (packet=3.282us/0.488)
-pps= 62235 avg= 15.518us dev=  1.075us min=13.222us  (packet=3.293us/0.488)
-pps= 62379 avg= 15.476us dev=  1.044us min=13.257us  (packet=3.282us/0.474)
-pps= 62453 avg= 15.462us dev=  1.051us min=13.143us  (packet=3.289us/0.501)
-pps= 62413 avg= 15.471us dev=  1.014us min=13.169us  (packet=3.282us/0.485)
-pps= 62450 avg= 15.460us dev=  1.046us min=13.286us  (packet=3.276us/0.489)
-pps= 62430 avg= 15.466us dev=  0.994us min=13.197us  (packet=3.281us/0.489)
-pps= 62547 avg= 15.434us dev=  1.016us min=13.189us  (packet=3.276us/0.485)
-pps= 62478 avg= 15.455us dev=  1.038us min=13.243us  (packet=3.272us/0.476)
-pps= 62577 avg= 15.429us dev=  1.002us min=13.194us  (packet=3.267us/0.477)
-```
