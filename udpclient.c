@@ -28,8 +28,6 @@ struct state
 	struct stddev stddev_packet;
 };
 
-long gettid() { return syscall(SYS_gettid); }
-
 #define PKT_SIZE 32
 
 void thread_loop(void *userdata)
